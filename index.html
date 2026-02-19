@@ -87,17 +87,7 @@
             color: #ffffff; text-decoration: none; padding: 12px 25px; border-radius: 50px;
             font-weight: bold; transition: 0.3s; font-size: 0.9rem;
         }
-
-        /* Estilo da mensagem de sucesso */
-        #success-message {
-            display: none;
-            text-align: center;
-            padding: 20px;
-            background: rgba(39, 174, 96, 0.2);
-            border: 1px solid var(--success-green);
-            border-radius: 15px;
-            margin-top: 10px;
-        }
+        .btn-calendar:hover { background: rgba(255,255,255,0.2); border-color: var(--gold-text); }
 
         footer { text-align: center; padding: 30px; opacity: 0.6; font-size: 0.8rem; }
     </style>
@@ -111,7 +101,7 @@
 
         <section class="hero">
             <h1>Family at the Foot of the Cross</h1>
-            <p>This Good Friday, bring your family to the Foot of the Cross.</p>
+            <p>This Good Friday, bring your family to the Foot of the Cross. You will also receive a free bottle of the blessed oil from Israel.</p>
         </section>
 
         <section class="info-card">
@@ -125,29 +115,20 @@
                 <div class="info-text"><h3>Time</h3><p>15:00</p></div>
             </div>
 
-            <a href="https://www.google.com/maps/search/?api=1&query=1+Thornton+Street,+Newcastle+Upon+Tyne,+NE1+4AT" target="_blank" class="info-item">
+            <a href="https://www.google.com/maps/search/?api=1&query=1+Thornton+Street,+NE1+4AT+Newcastle" target="_blank" class="info-item">
                 <div class="icon"><svg viewBox="0 0 24 24"><path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2C8.13,2 5,5.13 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9C19,5.13 15.87,2 12,2Z"/></svg></div>
                 <div class="info-text"><h3>Address (Open Maps)</h3><p>1 Thornton Street, NE1 4AT<br>UCKG Help Centre Newcastle</p></div>
             </a>
         </section>
 
         <section class="form-section">
-            <div id="form-container">
-                <h2>Confirm Your Presence</h2>
-                <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {showThanks();}"></iframe>
-                
-                <form action="https://docs.google.com/forms/d/e/1FAIpQLSemVshO3Vk8kyVohnE7Ux3x0rP6ZXwRsH9D0Wf037Ao3PgeIQ/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
-                    <input type="text" name="entry.675630816" placeholder="Full Name" required>
-                    <input type="email" name="entry.2064505316" placeholder="Email Address" required>
-                    <input type="tel" name="entry.120718653" placeholder="Phone Number" required>
-                    <button type="submit" class="btn-submit">Confirm Attendance</button>
-                </form>
-            </div>
-            
-            <div id="success-message">
-                <h2 style="color: #2ecc71;">Thank You!</h2>
-                <p>Your presence has been confirmed.</p>
-            </div>
+            <h2>Confirm Your Presence</h2>
+            <form action="https://docs.google.com/forms/d/e/1FAIpQLSemVshO3Vk8kyVohnE7Ux3x0rP6ZXwRsH9D0Wf037Ao3PgeIQ/formResponse" method="POST">
+                <input type="text" name="entry.675630816" placeholder="Full Name" required>
+                <input type="email" name="entry.2064505316" placeholder="Email Address" required>
+                <input type="tel" name="entry.120718653" placeholder="Phone Number" required>
+                <button type="submit" class="btn-submit">Confirm Attendance</button>
+            </form>
         </section>
 
         <section class="calendar-section">
@@ -155,16 +136,150 @@
         </section>
 
         <footer>
-            <p>UCKG HelpCentre, Newcastle Upon Tyne, United Kingdom</p>
+            <p><!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family at the Foot of the Cross - UCKG Newcastle</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --uckg-blue: #003087;
+            --success-green: #27ae60;
+            --gold-text: #bf953f; 
+            --gold-gradient: linear-gradient(to bottom, #fcf6ba 0%, #bf953f 22%, #fbf5b7 45%, #aa771c 50%, #fcf6ba 100%);
+            --bg-gradient: linear-gradient(180deg, #001A41 0%, #003087 50%, #001A41 100%);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+
+        body {
+            background: var(--bg-gradient);
+            background-attachment: fixed;
+            color: #ffffff;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container { width: 100%; max-width: 600px; margin: 0 auto; padding: 20px; }
+        header { text-align: center; padding-top: 10px; }
+
+        .flyer-img {
+            width: 100%;
+            max-width: 480px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .hero { text-align: center; padding: 25px 10px; }
+        .hero h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.4rem;
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin-bottom: 8px;
+            font-weight: 900;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            filter: drop-shadow(0px 3px 3px rgba(0,0,0,0.6));
+        }
+
+        .info-card, .form-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .info-item { display: flex; align-items: center; margin-bottom: 20px; text-decoration: none; color: inherit; }
+        .icon { width: 45px; height: 45px; background: rgba(255,255,255,0.15); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0; }
+        .icon svg { fill: var(--gold-text); width: 24px; height: 24px; }
+        .info-text h3 { font-size: 0.8rem; text-transform: uppercase; color: var(--gold-text); letter-spacing: 1px; }
+        .info-text p { font-size: 1.1rem; font-weight: 600; }
+
+        .form-section h2 { text-align: center; margin-bottom: 20px; color: var(--gold-text); text-transform: uppercase; }
+        
+        input {
+            width: 100%; padding: 14px; border-radius: 10px; border: none;
+            background-color: rgba(255,255,255,0.95); font-size: 1rem; margin-bottom: 12px; color: #333;
+        }
+
+        .btn-submit {
+            width: 100%; background: linear-gradient(135deg, #2ecc71, #27ae60); color: white;
+            padding: 18px; border: none; border-radius: 10px; font-size: 1.2rem; font-weight: bold;
+            text-transform: uppercase; cursor: pointer; box-shadow: 0 5px 15px rgba(39, 174, 96, 0.4);
+        }
+
+        .calendar-section { text-align: center; padding-bottom: 40px; }
+        .btn-calendar {
+            display: inline-flex; align-items: center; justify-content: center;
+            background: rgba(255,255,255,0.1); 
+            border: 1px solid rgba(255,255,255,0.3);
+            color: #ffffff; text-decoration: none; padding: 12px 25px; border-radius: 50px;
+            font-weight: bold; transition: 0.3s; font-size: 0.9rem;
+        }
+        .btn-calendar:hover { background: rgba(255,255,255,0.2); border-color: var(--gold-text); }
+
+        footer { text-align: center; padding: 30px; opacity: 0.6; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <img src="goodfridayflyer.jpg" alt="Flyer" class="flyer-img">
+        </header>
+
+        <section class="hero">
+            <h1>Family at the Foot of the Cross</h1>
+            <p>This Good Friday, bring your family to the Foot of the Cross. You will also receive a free bottle of the blessed oil from Israel.</p>
+        </section>
+
+        <section class="info-card">
+            <div class="info-item">
+                <div class="icon"><svg viewBox="0 0 24 24"><path d="M19,4H18V2H16V4H8V2H6V4H5C3.89,4 3.01,4.9 3.01,6L3,20C3,21.1 3.89,22 5,22H19C20.1,22 21,21.1 21,20V6C21,4.9 20.1,4 19,4M19,20H5V10H19V20M19,8H5V6H19V8Z"/></svg></div>
+                <div class="info-text"><h3>Date</h3><p>Friday, 3 April 2026</p></div>
+            </div>
+            
+            <div class="info-item">
+                <div class="icon"><svg viewBox="0 0 24 24"><path d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.53 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z"/></svg></div>
+                <div class="info-text"><h3>Time</h3><p>15:00</p></div>
+            </div>
+
+            <a href="https://www.google.com/maps/search/?api=1&query=1+Thornton+Street,+NE1+4AT+Newcastle" target="_blank" class="info-item">
+                <div class="icon"><svg viewBox="0 0 24 24"><path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2C8.13,2 5,5.13 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9C19,5.13 15.87,2 12,2Z"/></svg></div>
+                <div class="info-text"><h3>Address (Open Maps)</h3><p>1 Thornton Street, NE1 4AT<br>UCKG Help Centre Newcastle</p></div>
+            </a>
+        </section>
+
+        <section class="form-section">
+            <h2>Confirm Your Presence</h2>
+            <form action="https://docs.google.com/forms/d/e/1FAIpQLSemVshO3Vk8kyVohnE7Ux3x0rP6ZXwRsH9D0Wf037Ao3PgeIQ/formResponse" method="POST">
+                <input type="text" name="entry.675630816" placeholder="Full Name" required>
+                <input type="email" name="entry.2064505316" placeholder="Email Address" required>
+                <input type="tel" name="entry.120718653" placeholder="Phone Number" required>
+                <button type="submit" class="btn-submit">Confirm Attendance</button>
+            </form>
+        </section>
+
+        <section class="calendar-section">
+            <a href="event.ics" download="event.ics" class="btn-calendar">📅 Add to Calendar</a>
+        </section>
+
+        <footer>
+            <p>UCKG HelpCentre, Newcastle Upon Tyne, United Kingdom • Located below Premier Apartments</p>
         </footer>
     </div>
-
-    <script>
-        var submitted = false;
-        function showThanks() {
-            document.getElementById('form-container').style.display = 'none';
-            document.getElementById('success-message').style.display = 'block';
-        }
-    </script>
+</body>
+</html></p>
+        </footer>
+    </div>
 </body>
 </html>

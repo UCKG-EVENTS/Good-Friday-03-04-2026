@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,46 +11,117 @@
             --gold-gradient: linear-gradient(to bottom, #fcf6ba 0%, #bf953f 22%, #fbf5b7 45%, #aa771c 50%, #fcf6ba 100%);
             --bg-gradient: linear-gradient(180deg, #001A41 0%, #003087 50%, #001A41 100%);
         }
+
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
-        body { background: var(--bg-gradient); background-attachment: fixed; color: #ffffff; line-height: 1.6; min-height: 100vh; }
+
+        body {
+            background: var(--bg-gradient);
+            background-attachment: fixed;
+            color: #ffffff;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
         .container { width: 100%; max-width: 600px; margin: 0 auto; padding: 20px; }
         header { text-align: center; padding-top: 10px; }
         .flyer-img { width: 100%; max-width: 480px; border-radius: 15px; box-shadow: 0 15px 35px rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1); }
+
         .hero { text-align: center; padding: 25px 10px; }
-        .hero h1 { font-family: 'Cinzel', serif; font-size: 2.4rem; text-transform: uppercase; background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0px 3px 3px rgba(0,0,0,0.6)); }
-        .info-card, .form-section { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 25px; margin-bottom: 25px; }
+        .hero h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.4rem;
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin-bottom: 8px;
+            font-weight: 900;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            filter: drop-shadow(0px 3px 3px rgba(0,0,0,0.6));
+        }
+
+        .info-card, .form-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
         .info-item { display: flex; align-items: center; margin-bottom: 20px; text-decoration: none; color: inherit; }
-        .icon { width: 45px; height: 45px; background: rgba(255,255,255,0.15); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px; }
+        .icon { width: 45px; height: 45px; background: rgba(255,255,255,0.15); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0; }
         .icon svg { fill: var(--gold-text); width: 24px; height: 24px; }
-        .info-text h3 { font-size: 0.8rem; text-transform: uppercase; color: var(--gold-text); }
-        .form-section h2 { text-align: center; margin-bottom: 20px; color: var(--gold-text); }
-        input { width: 100%; padding: 14px; border-radius: 10px; border: none; background: white; margin-bottom: 12px; color: #333; font-size: 1rem; }
-        .btn-submit { width: 100%; background: linear-gradient(135deg, #2ecc71, #27ae60); color: white; padding: 18px; border: none; border-radius: 10px; font-size: 1.2rem; font-weight: bold; cursor: pointer; }
+        .info-text h3 { font-size: 0.8rem; text-transform: uppercase; color: var(--gold-text); letter-spacing: 1px; }
+        .info-text p { font-size: 1.1rem; font-weight: 600; }
+
+        .form-section h2 { text-align: center; margin-bottom: 20px; color: var(--gold-text); text-transform: uppercase; }
+        input { width: 100%; padding: 14px; border-radius: 10px; border: none; background-color: rgba(255,255,255,0.95); font-size: 1rem; margin-bottom: 12px; color: #333; }
+
+        .btn-submit {
+            width: 100%; background: linear-gradient(135deg, #2ecc71, #27ae60); color: white; padding: 18px; border: none; border-radius: 10px; font-size: 1.2rem; font-weight: bold; text-transform: uppercase; cursor: pointer; transition: 0.3s;
+        }
+
+        .btn-submit:hover { transform: translateY(-2px); filter: brightness(1.1); }
+        footer { text-align: center; padding: 30px; opacity: 0.6; font-size: 0.8rem; }
     </style>
 </head>
 <body>
+
     <div class="container">
-        <header><img src="goodfridayflyer.jpg" class="flyer-img" onerror="this.src='https://via.placeholder.com/520x600/003087/FFFFFF?text=Good+Friday'"></header>
-        <section class="hero"><h1>Family at the Foot of the Cross</h1></section>
-        
-        <section class="form-section">
-            <h2>Confirm Your Presence</h2>
-            <form action="https://docs.google.com/forms/d/e/1FAIpQLSf1Y94vquaQTqEgRGx7moj1BfKVaki0JXkuzhp0m6kyhjI/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
-                <input type="text" name="entry.1287753064" placeholder="Full Name" required>
-                <input type="email" name="entry.1496660127" placeholder="Email Address" required>
-                <input type="tel" name="entry.1357905139" placeholder="Phone Number" required>
-                <button type="submit" class="btn-submit">Confirm Attendance</button>
-            </form>
+        <header>
+            <img src="goodfridayflyer.jpg" alt="Family at the Foot of the Cross" class="flyer-img" onerror="this.src='https://via.placeholder.com/520x600/003087/FFFFFF?text=Good+Friday+UCKG'">
+        </header>
+
+        <section class="hero">
+            <h1>Family at the Foot of the Cross</h1>
+            <p>This Good Friday, bring your family to the Foot of the Cross.</p>
         </section>
 
         <section class="info-card">
             <div class="info-item">
-                <div class="icon"><svg viewBox="0 0 24 24"><path d="M12,2C8.13,2 5,5.13 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9C19,5.13 15.87,2 12,2Z"/></svg></div>
-                <div class="info-text"><h3>Address</h3><p>1 Thornton Street, NE1 4AT</p></div>
+                <div class="icon">
+                    <svg viewBox="0 0 24 24"><path d="M19,4H18V2H16V4H8V2H6V4H5C3.89,4 3.01,4.9 3.01,6L3,20C3,21.1 3.89,22 5,22H19C20.1,22 21,21.1 21,20V6C21,4.9 20.1,4 19,4M19,20H5V10H19V20M19,8H5V6H19V8Z"/></svg>
+                </div>
+                <div class="info-text">
+                    <h3>Date</h3>
+                    <p>Friday, 3 April 2026</p>
+                </div>
             </div>
+
+            <a href="https://maps.app.goo.gl/hGzN2v9Y6Y6" target="_blank" class="info-item">
+                <div class="icon">
+                    <svg viewBox="0 0 24 24"><path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2C8.13,2 5,5.13 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9C19,5.13 15.87,2 12,2Z"/></svg>
+                </div>
+                <div class="info-text">
+                    <h3>Address (Click to Open Maps)</h3>
+                    <p>1 Thornton Street, NE1 4AT<br>UCKG Help Centre Newcastle</p>
+                </div>
+            </a>
         </section>
+
+        <section class="form-section">
+            <h2>Confirm Your Presence</h2>
+            <form action="https://docs.google.com/forms/d/e/1FAIpQLSf1Y94vquaQTqEgRGx7moj1BfKVaki0JXkuzhp0m6kyhjI/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+                
+                <input type="text" name="entry.1287753064" placeholder="Full Name" required>
+                <input type="email" name="entry.1496660127" placeholder="Email Address" required>
+                <input type="tel" name="entry.1357905139" placeholder="Phone Number" required>
+                
+                <button type="submit" class="btn-submit">Confirm Attendance</button>
+            </form>
+        </section>
+
+        <footer>
+            <p>UCKG Newcastle © 2026 • Located below Premier Apartments</p>
+        </footer>
     </div>
-    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {alert('Confirmed! Check your spreadsheet.'); window.location.reload();}"></iframe>
+
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {alert('Thank you! Your presence has been confirmed.'); window.location.reload();}"></iframe>
+
     <script>var submitted = false;</script>
 </body>
 </html>

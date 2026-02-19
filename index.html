@@ -11,7 +11,7 @@
             --success-green: #27ae60;
             --gold-text: #bf953f; 
             --gold-gradient: linear-gradient(to bottom, #fcf6ba 0%, #bf953f 22%, #fbf5b7 45%, #aa771c 50%, #fcf6ba 100%);
-            /* Ajuste do degradê para concentrar a cor no meio */
+            /* Degradê concentrado no meio conforme seu código atual */
             --bg-gradient: linear-gradient(180deg, #001A41 0%, #003087 50%, #001A41 100%);
         }
 
@@ -127,13 +127,12 @@
 
         .calendar-section { text-align: center; padding-bottom: 40px; }
 
-        /* BOTÃO CALENDÁRIO SIMPLIFICADO SEM ANIMAÇÃO DOURADA */
         .btn-calendar {
             display: inline-flex; 
             align-items: center; 
             justify-content: center;
-            background: rgba(0, 0, 0, 0.3); /* Fundo escuro simples */
-            border: 1px solid var(--gold-text); /* Apenas borda dourada */
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--gold-text);
             color: #ffffff;
             text-decoration: none; 
             padding: 12px 25px; 
@@ -189,7 +188,7 @@
                 </div>
             </div>
 
-            <a href="https://www.google.com/maps/search/?api=1&query=UCKG+HelpCentre+Newcastle+NE1+4AT" target="_blank" class="info-item">
+            <a href="https://maps.google.com/?q=1+Thornton+Street,+NE1+4AT" target="_blank" class="info-item">
                 <div class="icon">
                     <svg viewBox="0 0 24 24"><path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2C8.13,2 5,5.13 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9C19,5.13 15.87,2 12,2Z"/></svg>
                 </div>
@@ -202,10 +201,12 @@
 
         <section class="form-section">
             <h2>Confirm Your Presence</h2>
-            <form id="registrationForm">
-                <input type="text" id="name" placeholder="Full Name" required>
-                <input type="email" id="email" placeholder="Email Address" required>
-                <input type="tel" id="phone" placeholder="Phone Number" required>
+            <form action="https://docs.google.com/forms/d/e/1FAIpQLSclh52R0E-85fO0yX-h2zO5v9V4mP5-U-vL_qS-Y0/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+                
+                <input type="text" name="entry.1444390500" placeholder="Full Name" required>
+                <input type="email" name="entry.2093551000" placeholder="Email Address" required>
+                <input type="tel" name="entry.1122334455" placeholder="Phone Number" required>
+                
                 <button type="submit" class="btn-submit">Confirm Attendance</button>
             </form>
         </section>
@@ -221,13 +222,8 @@
         </footer>
     </div>
 
-    <script>
-        document.getElementById('registrationForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name = document.getElementById('name').value;
-            alert('Thank you, ' + name + '! Your presence has been confirmed.');
-            this.reset();
-        });
-    </script>
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {alert('Thank you! Your presence has been confirmed.'); window.location.reload();}"></iframe>
+
+    <script>var submitted = false;</script>
 </body>
 </html>

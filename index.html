@@ -210,19 +210,15 @@
 <body>
 
     <div class="container">
-        <!-- TOP FLYER -->
         <header>
-            <!-- Substitua 'flyer.jpg' pelo caminho real da sua imagem no GitHub -->
-            <img src="flyer.jpg" alt="Family at the Foot of the Cross" class="flyer-img" onerror="this.src='https://via.placeholder.com/520x600/003087/FFFFFF?text=Family+at+the+Foot+of+the+Cross'">
+            <img src="goodfridayflyer.jpg" alt="Family at the Foot of the Cross" class="flyer-img" onerror="this.src='https://via.placeholder.com/520x600/003087/FFFFFF?text=Family+at+the+Foot+of+the+Cross'">
         </header>
 
-        <!-- HERO SECTION -->
         <section class="hero">
             <h1>Family at the Foot of the Cross</h1>
             <p>A special meeting for your family's transformation.</p>
         </section>
 
-        <!-- INFO SECTION -->
         <section class="info-card">
             <div class="info-item">
                 <div class="icon">
@@ -255,7 +251,6 @@
             </div>
         </section>
 
-        <!-- FORMULÁRIO -->
         <section class="form-section">
             <h2>Confirm Your Presence</h2>
             <form id="registrationForm">
@@ -268,71 +263,28 @@
                 <div class="form-group">
                     <input type="tel" id="phone" placeholder="Phone Number" required>
                 </div>
-                <div class="form-group">
-                    <input type="tel" id="whatsapp" placeholder="WhatsApp Number">
-                </div>
                 <button type="submit" class="btn-submit">Confirmar Presença</button>
             </form>
         </section>
 
-        <!-- CALENDAR -->
         <section class="calendar-section">
-            <a href="#" id="addToCalendar" class="btn-calendar">
+            <a href="event.ics" download="event.ics" class="btn-calendar">
                 📅 + Add to Calendar
             </a>
         </section>
 
-        <!-- FOOTER -->
         <footer>
             <p>UCKG Newcastle</p>
         </footer>
     </div>
 
     <script>
-        // Lógica do Formulário
+        // Lógica simples do Formulário
         document.getElementById('registrationForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
             const name = document.getElementById('name').value;
-            
-            // Aqui você pode integrar com Google Sheets, Formspree ou EmailJS
             alert('Thank you, ' + name + '! Your presence has been confirmed. See you at the Foot of the Cross.');
             this.reset();
-        });
-
-        // Função para gerar e baixar o arquivo .ics (Calendário)
-        document.getElementById('addToCalendar').addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const event = {
-                title: 'Family at the Foot of the Cross - UCKG',
-                start: '20260403T150000',
-                end: '20260403T170000',
-                location: '1 Thornton Street, NE1 - UCKG Holy Centre Newcastle',
-                description: 'Special meeting for the family.'
-            };
-
-            const icsMsg = `BEGIN:VCALENDAR
-VERSION:2.0
-PRODID:-//UCKG Newcastle//EN
-BEGIN:VEVENT
-UID:${Date.now()}
-DTSTAMP:20250101T000000Z
-DTSTART:${event.start}
-DTEND:${event.end}
-SUMMARY:${event.title}
-LOCATION:${event.location}
-DESCRIPTION:${event.description}
-END:VEVENT
-END:VCALENDAR`;
-
-            const blob = new Blob([icsMsg], { type: 'text/calendar;charset=utf-8' });
-            const link = document.createElement('a');
-            link.href = window.URL.createObjectURL(blob);
-            link.setAttribute('download', 'event-uckg.ics');
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
         });
     </script>
 </body>

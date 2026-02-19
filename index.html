@@ -8,7 +8,8 @@
     <style>
         :root {
             --uckg-blue: #003087;
-            --success-green: #27ae60; /* Verde para conclusão positiva */
+            --success-green: #27ae60;
+            --gold-text: #bf953f; /* O dourado padrão usado nos itens */
             --gold-gradient: linear-gradient(to bottom, #fcf6ba 0%, #bf953f 22%, #fbf5b7 45%, #aa771c 50%, #fcf6ba 100%);
             --bg-gradient: linear-gradient(180deg, #001A41 0%, #003087 40%, #5E0B15 100%);
         }
@@ -17,7 +18,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
@@ -47,9 +48,9 @@
 
         .hero { text-align: center; padding: 25px 10px; }
 
-        /* TÍTULO COM A FONTE CINZEL E DOURADO */
+        /* TÍTULO PRINCIPAL - CINZEL DOURADO */
         .hero h1 {
-            font-family: 'Cinzel', serif; /* Fonte do Flyer */
+            font-family: 'Cinzel', serif;
             font-size: 2.4rem;
             text-transform: uppercase;
             line-height: 1.1;
@@ -62,6 +63,7 @@
             filter: drop-shadow(0px 3px 3px rgba(0,0,0,0.6));
         }
 
+        /* CARDS GLASS */
         .info-card, .form-section {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
@@ -84,18 +86,28 @@
             margin-right: 15px; flex-shrink: 0;
         }
 
-        .icon svg { fill: #bf953f; width: 24px; height: 24px; }
-        .info-text h3 { font-size: 0.8rem; text-transform: uppercase; color: #bf953f; letter-spacing: 1px; }
+        .icon svg { fill: var(--gold-text); width: 24px; height: 24px; }
+        .info-text h3 { font-size: 0.8rem; text-transform: uppercase; color: var(--gold-text); letter-spacing: 1px; }
         .info-text p { font-size: 1.1rem; font-weight: 600; }
 
-        .form-section h2 { text-align: center; margin-bottom: 20px; font-size: 1.5rem; font-family: 'Cinzel', serif; color: #fcf6ba; }
+        /* TÍTULO DO FORMULÁRIO - FONTE PADRÃO DOURADA */
+        .form-section h2 { 
+            text-align: center; 
+            margin-bottom: 20px; 
+            font-size: 1.5rem; 
+            font-weight: 700;
+            color: var(--gold-text); /* Mesma cor dourada das informações */
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
         
         input {
             width: 100%; padding: 14px; border-radius: 10px; border: none;
             background-color: rgba(255,255,255,0.95); font-size: 1rem; margin-bottom: 12px;
+            color: #333;
         }
 
-        /* BOTÃO VERDE DE SUCESSO */
+        /* BOTÃO VERDE */
         .btn-submit {
             width: 100%;
             background: linear-gradient(135deg, #2ecc71, #27ae60);
@@ -109,12 +121,10 @@
             cursor: pointer;
             transition: 0.3s;
             box-shadow: 0 5px 15px rgba(39, 174, 96, 0.4);
-            letter-spacing: 1px;
         }
 
         .btn-submit:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(39, 174, 96, 0.6);
             filter: brightness(1.1);
         }
 
@@ -123,7 +133,7 @@
         .btn-calendar {
             display: inline-flex; align-items: center; justify-content: center;
             background: rgba(255,255,255,0.05);
-            border: 1px solid #bf953f;
+            border: 1px solid var(--gold-text);
             color: #fbf5b7;
             text-decoration: none; padding: 12px 25px; border-radius: 50px;
             font-weight: bold; transition: 0.3s; font-size: 0.9rem;
@@ -172,7 +182,7 @@
                 </div>
             </div>
 
-            <a href="https://www.google.com/maps/search/?api=1&query=1+Thornton+Street,+Newcastle+upon+Tyne+NE1+4AT" target="_blank" class="info-item">
+            <a href="https://www.google.com/maps/search/?api=1&query=UCKG+Help+Centre+Newcastle+1+Thornton+Street+NE1+4AT" target="_blank" class="info-item">
                 <div class="icon">
                     <svg viewBox="0 0 24 24"><path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2C8.13,2 5,5.13 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9C19,5.13 15.87,2 12,2Z"/></svg>
                 </div>
@@ -208,7 +218,7 @@
         document.getElementById('registrationForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const name = document.getElementById('name').value;
-            alert('Thank you, ' + name + '! Your presence has been confirmed. See you at the Foot of the Cross.');
+            alert('Thank you, ' + name + '! Your presence has been confirmed.');
             this.reset();
         });
     </script>

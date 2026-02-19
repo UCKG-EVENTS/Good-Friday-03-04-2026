@@ -85,12 +85,18 @@
         #success-message h2 { color: var(--success-green); }
 
         .calendar-section { text-align: center; padding-bottom: 40px; }
+        
+        /* BOTÃO SEM A COR DOURADA */
         .btn-calendar {
             display: inline-flex; align-items: center; justify-content: center;
-            background: var(--gold-gradient); 
-            color: #000; text-decoration: none; padding: 12px 25px; border-radius: 50px;
+            background: rgba(255, 255, 255, 0.1); 
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #ffffff; text-decoration: none; padding: 12px 25px; border-radius: 50px;
             font-weight: bold; transition: 0.3s; font-size: 0.9rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        .btn-calendar:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: var(--gold-text);
         }
 
         footer { text-align: center; padding: 30px; opacity: 0.6; font-size: 0.8rem; }

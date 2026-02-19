@@ -7,8 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --uckg-blue: #003087;
-            --success-green: #27ae60;
             --gold-text: #bf953f; 
             --gold-gradient: linear-gradient(to bottom, #fcf6ba 0%, #bf953f 22%, #fbf5b7 45%, #aa771c 50%, #fcf6ba 100%);
             --bg-gradient: linear-gradient(180deg, #001A41 0%, #003087 50%, #001A41 100%);
@@ -63,9 +61,7 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
-        .info-item { display: flex; align-items: center; margin-bottom: 20px; text-decoration: none; color: inherit; transition: 0.3s; }
-        .info-item:last-child { margin-bottom: 0; }
-        .info-item:hover { opacity: 0.8; }
+        .info-item { display: flex; align-items: center; margin-bottom: 20px; text-decoration: none; color: inherit; }
 
         .icon {
             width: 45px; height: 45px;
@@ -82,11 +78,8 @@
         .form-section h2 { 
             text-align: center; 
             margin-bottom: 20px; 
-            font-size: 1.5rem; 
-            font-weight: 700;
             color: var(--gold-text);
             text-transform: uppercase;
-            letter-spacing: 1px;
         }
         
         input {
@@ -107,37 +100,11 @@
             text-transform: uppercase;
             cursor: pointer;
             transition: 0.3s;
-            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.4);
         }
 
-        .btn-submit:hover {
-            transform: translateY(-2px);
-            filter: brightness(1.1);
-        }
-
-        .calendar-section { text-align: center; padding-bottom: 40px; }
-
-        .btn-calendar {
-            display: inline-flex; 
-            align-items: center; 
-            justify-content: center;
-            background: rgba(0, 0, 0, 0.3);
-            border: 1px solid var(--gold-text);
-            color: #ffffff;
-            text-decoration: none; 
-            padding: 12px 25px; 
-            border-radius: 50px;
-            font-weight: bold; 
-            transition: 0.3s; 
-            font-size: 0.9rem;
-        }
+        .btn-submit:hover { transform: translateY(-2px); filter: brightness(1.1); }
 
         footer { text-align: center; padding: 30px; opacity: 0.6; font-size: 0.8rem; }
-
-        @media (max-width: 480px) {
-            .hero h1 { font-size: 1.9rem; }
-            .container { padding: 15px; }
-        }
     </style>
 </head>
 <body>
@@ -163,17 +130,7 @@
                 </div>
             </div>
 
-            <div class="info-item">
-                <div class="icon">
-                    <svg viewBox="0 0 24 24"><path d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.53 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z"/></svg>
-                </div>
-                <div class="info-text">
-                    <h3>Time</h3>
-                    <p>15:00</p>
-                </div>
-            </div>
-
-            <a href="https://maps.app.goo.gl/uR6vM71o4vV3J48eA" target="_blank" class="info-item">
+            <a href="https://www.google.com/maps/search/?api=1&query=1+Thornton+Street+NE1+4AT" target="_blank" class="info-item">
                 <div class="icon">
                     <svg viewBox="0 0 24 24"><path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2C8.13,2 5,5.13 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9C19,5.13 15.87,2 12,2Z"/></svg>
                 </div>
@@ -194,12 +151,6 @@
                 
                 <button type="submit" class="btn-submit">Confirm Attendance</button>
             </form>
-        </section>
-
-        <section class="calendar-section">
-            <a href="event.ics" download="event.ics" class="btn-calendar">
-                📅 Add to Calendar
-            </a>
         </section>
 
         <footer>

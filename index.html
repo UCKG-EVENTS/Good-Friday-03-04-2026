@@ -40,7 +40,7 @@
         /* TÍTULO EM 2 LINHAS */
         .hero h1 {
             font-family: 'Cinzel', serif;
-            font-size: 1.9rem; 
+            font-size: 2.1rem; 
             text-transform: uppercase;
             line-height: 1.2;
             margin-bottom: 15px;
@@ -84,14 +84,16 @@
         #success-message { display: none; text-align: center; padding: 20px; }
         #success-message h2 { color: var(--success-green); }
 
+        /* BOTAO CALENDARIO ORIGINAL RECUPERADO */
         .calendar-section { text-align: center; padding-bottom: 40px; }
         .btn-calendar {
             display: inline-flex; align-items: center; justify-content: center;
-            background: var(--gold-gradient); 
-            color: #000; text-decoration: none; padding: 12px 25px; border-radius: 50px;
-            font-weight: bold; transition: 0.3s; font-size: 0.9rem;
+            background: var(--gold-gradient);
+            color: #000; text-decoration: none; padding: 10px 25px; border-radius: 50px;
+            font-weight: bold; font-size: 0.95rem; border: none;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
+        .btn-calendar img { width: 24px; margin-right: 10px; }
 
         footer { text-align: center; padding: 30px; opacity: 0.6; font-size: 0.8rem; }
     </style>
@@ -147,7 +149,9 @@
         </section>
 
         <section class="calendar-section">
-            <a href="event.ics" download="event.ics" class="btn-calendar">📅 Add to Calendar</a>
+            <a href="event.ics" download="event.ics" class="btn-calendar">
+                <img src="https://cdn-icons-png.flaticon.com/512/3652/3652191.png" alt="icon"> Add to Calendar
+            </a>
         </section>
 
         <footer>

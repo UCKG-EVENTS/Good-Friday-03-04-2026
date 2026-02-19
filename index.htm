@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family at the Foot of the Cross - UCKG Newcastle</title>
+    <style>
+        /* PALETA DE CORES */
+        :root {
+            --bg-black: #000000;
+            --uckg-blue: #003087;
+            --uckg-red: #D32F2F;
+            --uckg-gold: #FDD835;
+            --text-white: #FFFFFF;
+        }
+
+        /* RESET & BASE */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-black);
+            color: var(--text-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* CONTAINER */
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* HEADER / FLYER */
+        header {
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        .flyer-img {
+            width: 100%;
+            max-width: 520px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 2px solid var(--uckg-blue);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            text-align: center;
+            padding: 30px 10px;
+        }
+
+        .hero h1 {
+            color: var(--uckg-gold);
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin-bottom: 10px;
+            font-weight: 900;
+        }
+
+        /* INFO SECTION */
+        .info-card {
+            background-color: var(--uckg-blue);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .info-item:last-child { margin-bottom: 0; }
+
+        .icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .icon svg {
+            fill: var(--uckg-gold);
+            width: 20px;
+            height: 20px;
+        }
+
+        .info-text h3 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            color: var(--uckg-gold);
+            letter-spacing: 1px;
+        }
+
+        .info-text p {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        /* FORMULÁRIO */
+        .form-section {
+            background-color: var(--uckg-blue);
+            padding: 30px 25px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .form-section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--text-white);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        input {
+            width: 100%;
+            padding: 15px;
+            border-radius: 8px;
+            border: none;
+            background-color: #FFFFFF;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        input:focus {
+            outline: 3px solid var(--uckg-gold);
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: var(--uckg-red);
+            color: white;
+            padding: 18px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn-submit:active {
+            transform: scale(0.98);
+        }
+
+        /* CALENDAR BUTTON */
+        .calendar-section {
+            text-align: center;
+            padding: 10px 0 40px 0;
+        }
+
+        .btn-calendar {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--uckg-red);
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            width: 100%;
+            max-width: 300px;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(211, 47, 47, 0.4);
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid #333;
+        }
+
+        footer p {
+            color: var(--uckg-gold);
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 1.8rem; }
+            .container { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- TOP FLYER -->
+        <header>
+            <!-- Substitua 'flyer.jpg' pelo caminho real da sua imagem no GitHub -->
+            <img src="flyer.jpg" alt="Family at the Foot of the Cross" class="flyer-img" onerror="this.src='https://via.placeholder.com/520x600/003087/FFFFFF?text=Family+at+the+Foot+of+the+Cross'">
+        </header>
+
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <h1>Family at the Foot of the Cross</h1>
+            <p>A special meeting for your family's transformation.</p>
+        </section>
+
+        <!-- INFO SECTION -->
+        <section class="info-card">
+            <div class="info-item">
+                <div class="icon">
+                    <svg viewBox="0 0 24 24"><path d="M19,4H18V2H16V4H8V2H6V4H5C3.89,4 3.01,4.9 3.01,6L3,20C3,21.1 3.89,22 5,22H19C20.1,22 21,21.1 21,20V6C21,4.9 20.1,4 19,4M19,20H5V10H19V20M19,8H5V6H19V8Z"/></svg>
+                </div>
+                <div class="info-text">
+                    <h3>Data</h3>
+                    <p>Friday, 3 April 2026</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="icon">
+                    <svg viewBox="0 0 24 24"><path d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.53 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z"/></svg>
+                </div>
+                <div class="info-text">
+                    <h3>Horário</h3>
+                    <p>15:00 - 17:00</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="icon">
+                    <svg viewBox="0 0 24 24"><path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2C8.13,2 5,5.13 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9C19,5.13 15.87,2 12,2Z"/></svg>
+                </div>
+                <div class="info-text">
+                    <h3>Local</h3>
+                    <p>1 Thornton Street, NE1<br>UCKG Holy Centre Newcastle</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FORMULÁRIO -->
+        <section class="form-section">
+            <h2>Confirm Your Presence</h2>
+            <form id="registrationForm">
+                <div class="form-group">
+                    <input type="text" id="name" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="phone" placeholder="Phone Number" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="whatsapp" placeholder="WhatsApp Number">
+                </div>
+                <button type="submit" class="btn-submit">Confirmar Presença</button>
+            </form>
+        </section>
+
+        <!-- CALENDAR -->
+        <section class="calendar-section">
+            <a href="#" id="addToCalendar" class="btn-calendar">
+                📅 + Add to Calendar
+            </a>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <p>UCKG Newcastle</p>
+        </footer>
+    </div>
+
+    <script>
+        // Lógica do Formulário
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            
+            // Aqui você pode integrar com Google Sheets, Formspree ou EmailJS
+            alert('Thank you, ' + name + '! Your presence has been confirmed. See you at the Foot of the Cross.');
+            this.reset();
+        });
+
+        // Função para gerar e baixar o arquivo .ics (Calendário)
+        document.getElementById('addToCalendar').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const event = {
+                title: 'Family at the Foot of the Cross - UCKG',
+                start: '20260403T150000',
+                end: '20260403T170000',
+                location: '1 Thornton Street, NE1 - UCKG Holy Centre Newcastle',
+                description: 'Special meeting for the family.'
+            };
+
+            const icsMsg = `BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//UCKG Newcastle//EN
+BEGIN:VEVENT
+UID:${Date.now()}
+DTSTAMP:20250101T000000Z
+DTSTART:${event.start}
+DTEND:${event.end}
+SUMMARY:${event.title}
+LOCATION:${event.location}
+DESCRIPTION:${event.description}
+END:VEVENT
+END:VCALENDAR`;
+
+            const blob = new Blob([icsMsg], { type: 'text/calendar;charset=utf-8' });
+            const link = document.createElement('a');
+            link.href = window.URL.createObjectURL(blob);
+            link.setAttribute('download', 'event-uckg.ics');
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    </script>
+</body>
+</html>

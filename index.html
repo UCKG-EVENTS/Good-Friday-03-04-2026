@@ -79,6 +79,16 @@
             text-transform: uppercase; cursor: pointer; box-shadow: 0 5px 15px rgba(39, 174, 96, 0.4);
         }
 
+        /* Estilo da mensagem de sucesso */
+        #success-message {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            background: rgba(39, 174, 96, 0.2);
+            border: 1px solid var(--success-green);
+            border-radius: 15px;
+        }
+
         .calendar-section { text-align: center; padding-bottom: 40px; }
         .btn-calendar {
             display: inline-flex; align-items: center; justify-content: center;
@@ -122,13 +132,23 @@
         </section>
 
         <section class="form-section">
-            <h2>Confirm Your Presence</h2>
-            <form action="https://docs.google.com/forms/d/e/1FAIpQLSemVshO3Vk8kyVohnE7Ux3x0rP6ZXwRsH9D0Wf037Ao3PgeIQ/formResponse" method="POST">
-                <input type="text" name="entry.675630816" placeholder="Full Name" required>
-                <input type="email" name="entry.2064505316" placeholder="Email Address" required>
-                <input type="tel" name="entry.120718653" placeholder="Phone Number" required>
-                <button type="submit" class="btn-submit">Confirm Attendance</button>
-            </form>
+            <div id="form-content">
+                <h2>Confirm Your Presence</h2>
+                <script type="text/javascript">var submitted=false;</script>
+                <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='#'; showSuccess();}"></iframe>
+                
+                <form action="https://docs.google.com/forms/d/e/1FAIpQLSemVshO3Vk8kyVohnE7Ux3x0rP6ZXwRsH9D0Wf037Ao3PgeIQ/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+                    <input type="text" name="entry.675630816" placeholder="Full Name" required>
+                    <input type="email" name="entry.2064505316" placeholder="Email Address" required>
+                    <input type="tel" name="entry.120718653" placeholder="Phone Number" required>
+                    <button type="submit" class="btn-submit">Confirm Attendance</button>
+                </form>
+            </div>
+
+            <div id="success-message">
+                <h2 style="color: var(--success-green); margin-bottom: 10px;">Thank You!</h2>
+                <p>Your presence has been confirmed.</p>
+            </div>
         </section>
 
         <section class="calendar-section">
@@ -139,5 +159,12 @@
             <p>UCKG HelpCentre, Newcastle Upon Tyne, United Kingdom • Located below Premier Apartments</p>
         </footer>
     </div>
+
+    <script>
+        function showSuccess() {
+            document.getElementById('form-content').style.display = 'none';
+            document.getElementById('success-message').style.display = 'block';
+        }
+    </script>
 </body>
 </html>

@@ -10,8 +10,9 @@
             --uckg-blue: #003087;
             --uckg-red: #D32F2F;
             --uckg-gold: #FDD835;
+            /* Dourado Metálico */
+            --gold-gradient: linear-gradient(to bottom, #fcf6ba 0%, #bf953f 22%, #fbf5b7 45%, #aa771c 50%, #fcf6ba 100%);
             --text-white: #FFFFFF;
-            /* Gradiente inspirado no pôr do sol do flyer */
             --bg-gradient: linear-gradient(180deg, #001A41 0%, #003087 40%, #5E0B15 100%);
         }
 
@@ -25,7 +26,7 @@
 
         body {
             background: var(--bg-gradient);
-            background-attachment: fixed; /* Mantém o fundo fixo ao rolar */
+            background-attachment: fixed;
             color: var(--text-white);
             line-height: 1.6;
             min-height: 100vh;
@@ -59,20 +60,24 @@
             padding: 25px 10px;
         }
 
+        /* TÍTULO DOURADO METÁLICO */
         .hero h1 {
-            color: var(--uckg-gold);
             font-size: 2.2rem;
             text-transform: uppercase;
             line-height: 1.1;
             margin-bottom: 8px;
             font-weight: 900;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            filter: drop-shadow(0px 2px 2px rgba(0,0,0,0.5));
         }
 
         /* CARDS COM EFEITO GLASS */
         .info-card, .form-section {
-            background: rgba(255, 255, 255, 0.1); /* Fundo semi-transparente */
-            backdrop-filter: blur(10px); /* Efeito de desfoque */
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 20px;
@@ -101,11 +106,10 @@
             justify-content: center;
             margin-right: 15px;
             flex-shrink: 0;
-            transition: 0.3s;
         }
 
         .icon svg {
-            fill: var(--uckg-gold);
+            fill: #bf953f; /* Ícone seguindo o tom de ouro */
             width: 24px;
             height: 24px;
         }
@@ -113,7 +117,7 @@
         .info-text h3 {
             font-size: 0.8rem;
             text-transform: uppercase;
-            color: var(--uckg-gold);
+            color: #bf953f;
             letter-spacing: 1px;
         }
 
@@ -175,8 +179,8 @@
             align-items: center;
             justify-content: center;
             background: rgba(255,255,255,0.1);
-            border: 1px solid var(--uckg-gold);
-            color: var(--uckg-gold);
+            border: 1px solid #bf953f;
+            color: #fbf5b7;
             text-decoration: none;
             padding: 12px 25px;
             border-radius: 50px;
@@ -185,7 +189,7 @@
         }
 
         .btn-calendar:hover {
-            background: var(--uckg-gold);
+            background: var(--gold-gradient);
             color: #000;
         }
 
@@ -197,7 +201,6 @@
             font-size: 0.9rem;
         }
 
-        /* RESPONSIVIDADE */
         @media (max-width: 480px) {
             .hero h1 { font-size: 1.8rem; }
             .container { padding: 15px; }
@@ -237,7 +240,7 @@
                 </div>
             </div>
 
-            <a href="https://www.google.com/maps/search/?api=1&query=1+Thornton+Street,+NE1+4AT+Newcastle" target="_blank" class="info-item">
+            <a href="https://www.google.com/maps/search/?api=1&query=1+Thornton+Street,+NE1+4AT+UCKG+Newcastle" target="_blank" class="info-item">
                 <div class="icon">
                     <svg viewBox="0 0 24 24"><path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2C8.13,2 5,5.13 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9C19,5.13 15.87,2 12,2Z"/></svg>
                 </div>

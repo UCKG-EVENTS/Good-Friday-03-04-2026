@@ -87,7 +87,17 @@
             color: #ffffff; text-decoration: none; padding: 12px 25px; border-radius: 50px;
             font-weight: bold; transition: 0.3s; font-size: 0.9rem;
         }
-        .btn-calendar:hover { background: rgba(255,255,255,0.2); border-color: var(--gold-text); }
+
+        /* Estilo da mensagem de sucesso */
+        #success-message {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            background: rgba(39, 174, 96, 0.2);
+            border: 1px solid var(--success-green);
+            border-radius: 15px;
+            margin-top: 10px;
+        }
 
         footer { text-align: center; padding: 30px; opacity: 0.6; font-size: 0.8rem; }
     </style>
@@ -101,7 +111,7 @@
 
         <section class="hero">
             <h1>Family at the Foot of the Cross</h1>
-            <p>This Good Friday, bring your family to the Foot of the Cross. You will also receive a free bottle of the blessed oil from Israel.</p>
+            <p>This Good Friday, bring your family to the Foot of the Cross.</p>
         </section>
 
         <section class="info-card">
@@ -115,20 +125,29 @@
                 <div class="info-text"><h3>Time</h3><p>15:00</p></div>
             </div>
 
-            <a href="https://www.google.com/maps/search/?api=1&query=1+Thornton+Street,+NE1+4AT+Newcastle" target="_blank" class="info-item">
+            <a href="https://www.google.com/maps/search/?api=1&query=1+Thornton+Street,+Newcastle+Upon+Tyne,+NE1+4AT" target="_blank" class="info-item">
                 <div class="icon"><svg viewBox="0 0 24 24"><path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2C8.13,2 5,5.13 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9C19,5.13 15.87,2 12,2Z"/></svg></div>
                 <div class="info-text"><h3>Address (Open Maps)</h3><p>1 Thornton Street, NE1 4AT<br>UCKG Help Centre Newcastle</p></div>
             </a>
         </section>
 
         <section class="form-section">
-            <h2>Confirm Your Presence</h2>
-            <form action="https://docs.google.com/forms/d/e/1FAIpQLSemVshO3Vk8kyVohnE7Ux3x0rP6ZXwRsH9D0Wf037Ao3PgeIQ/formResponse" method="POST">
-                <input type="text" name="entry.675630816" placeholder="Full Name" required>
-                <input type="email" name="entry.2064505316" placeholder="Email Address" required>
-                <input type="tel" name="entry.120718653" placeholder="Phone Number" required>
-                <button type="submit" class="btn-submit">Confirm Attendance</button>
-            </form>
+            <div id="form-container">
+                <h2>Confirm Your Presence</h2>
+                <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {showThanks();}"></iframe>
+                
+                <form action="https://docs.google.com/forms/d/e/1FAIpQLSemVshO3Vk8kyVohnE7Ux3x0rP6ZXwRsH9D0Wf037Ao3PgeIQ/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+                    <input type="text" name="entry.675630816" placeholder="Full Name" required>
+                    <input type="email" name="entry.2064505316" placeholder="Email Address" required>
+                    <input type="tel" name="entry.120718653" placeholder="Phone Number" required>
+                    <button type="submit" class="btn-submit">Confirm Attendance</button>
+                </form>
+            </div>
+            
+            <div id="success-message">
+                <h2 style="color: #2ecc71;">Thank You!</h2>
+                <p>Your presence has been confirmed.</p>
+            </div>
         </section>
 
         <section class="calendar-section">
@@ -139,5 +158,13 @@
             <p>UCKG HelpCentre, Newcastle Upon Tyne, United Kingdom</p>
         </footer>
     </div>
+
+    <script>
+        var submitted = false;
+        function showThanks() {
+            document.getElementById('form-container').style.display = 'none';
+            document.getElementById('success-message').style.display = 'block';
+        }
+    </script>
 </body>
 </html>

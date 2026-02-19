@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +7,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --gold-text: #bf953f; 
+            --uckg-blue: #003087;
+            --success-green: #27ae60;
+            --gold-text: #bf953f; /* O dourado padrão usado nos itens */
             --gold-gradient: linear-gradient(to bottom, #fcf6ba 0%, #bf953f 22%, #fbf5b7 45%, #aa771c 50%, #fcf6ba 100%);
-            --bg-gradient: linear-gradient(180deg, #001A41 0%, #003087 50%, #001A41 100%);
+            --bg-gradient: linear-gradient(180deg, #001A41 0%, #003087 40%, #5E0B15 100%);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
 
         body {
             background: var(--bg-gradient);
@@ -22,7 +29,12 @@
             min-height: 100vh;
         }
 
-        .container { width: 100%; max-width: 600px; margin: 0 auto; padding: 20px; }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
         header { text-align: center; padding-top: 10px; }
 
@@ -36,6 +48,7 @@
 
         .hero { text-align: center; padding: 25px 10px; }
 
+        /* TÍTULO PRINCIPAL - CINZEL DOURADO */
         .hero h1 {
             font-family: 'Cinzel', serif;
             font-size: 2.4rem;
@@ -50,6 +63,7 @@
             filter: drop-shadow(0px 3px 3px rgba(0,0,0,0.6));
         }
 
+        /* CARDS GLASS */
         .info-card, .form-section {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
@@ -62,6 +76,7 @@
         }
 
         .info-item { display: flex; align-items: center; margin-bottom: 20px; text-decoration: none; color: inherit; }
+        .info-item:last-child { margin-bottom: 0; }
 
         .icon {
             width: 45px; height: 45px;
@@ -75,11 +90,15 @@
         .info-text h3 { font-size: 0.8rem; text-transform: uppercase; color: var(--gold-text); letter-spacing: 1px; }
         .info-text p { font-size: 1.1rem; font-weight: 600; }
 
+        /* TÍTULO DO FORMULÁRIO - FONTE PADRÃO DOURADA */
         .form-section h2 { 
             text-align: center; 
             margin-bottom: 20px; 
-            color: var(--gold-text);
+            font-size: 1.5rem; 
+            font-weight: 700;
+            color: var(--gold-text); /* Mesma cor dourada das informações */
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
         input {
@@ -88,6 +107,7 @@
             color: #333;
         }
 
+        /* BOTÃO VERDE */
         .btn-submit {
             width: 100%;
             background: linear-gradient(135deg, #2ecc71, #27ae60);
@@ -100,11 +120,33 @@
             text-transform: uppercase;
             cursor: pointer;
             transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.4);
         }
 
-        .btn-submit:hover { transform: translateY(-2px); filter: brightness(1.1); }
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.1);
+        }
+
+        .calendar-section { text-align: center; padding-bottom: 40px; }
+
+        .btn-calendar {
+            display: inline-flex; align-items: center; justify-content: center;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--gold-text);
+            color: #fbf5b7;
+            text-decoration: none; padding: 12px 25px; border-radius: 50px;
+            font-weight: bold; transition: 0.3s; font-size: 0.9rem;
+        }
+
+        .btn-calendar:hover { background: var(--gold-gradient); color: #000; }
 
         footer { text-align: center; padding: 30px; opacity: 0.6; font-size: 0.8rem; }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 1.9rem; }
+            .container { padding: 15px; }
+        }
     </style>
 </head>
 <body>
@@ -116,7 +158,9 @@
 
         <section class="hero">
             <h1>Family at the Foot of the Cross</h1>
-            <p>This Good Friday, bring your family to the Foot of the Cross.</p>
+            <p>This Good Friday, bring your family to the Foot of the Cross.
+You will also receive a free bottle of the blessed oil from Israel.
+</p>
         </section>
 
         <section class="info-card">
@@ -130,12 +174,22 @@
                 </div>
             </div>
 
-            <a href="https://www.google.com/maps/search/?api=1&query=1+Thornton+Street+NE1+4AT+Newcastle" target="_blank" class="info-item">
+            <div class="info-item">
+                <div class="icon">
+                    <svg viewBox="0 0 24 24"><path d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.53 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z"/></svg>
+                </div>
+                <div class="info-text">
+                    <h3>Time</h3>
+                    <p>15:00</p>
+                </div>
+            </div>
+
+            <a href="https://www.google.com/maps/search/?api=1&query=UCKG+Help+Centre+Newcastle+1+Thornton+Street+NE1+4AT" target="_blank" class="info-item">
                 <div class="icon">
                     <svg viewBox="0 0 24 24"><path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2C8.13,2 5,5.13 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9C19,5.13 15.87,2 12,2Z"/></svg>
                 </div>
                 <div class="info-text">
-                    <h3>Address (Click to Open Maps)</h3>
+                    <h3>Address (Open Maps)</h3>
                     <p>1 Thornton Street, NE1 4AT<br>UCKG Help Centre Newcastle</p>
                 </div>
             </a>
@@ -143,26 +197,32 @@
 
         <section class="form-section">
             <h2>Confirm Your Presence</h2>
-            
-            <form action="https://docs.google.com/forms/d/e/1FAIpQLSf1Y94vquaQTqEgRGx7moj1BfKVaki0JXkuzhp0m6kyhjI/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
-                
-                <input type="text" name="entry.1287753064" placeholder="Full Name" required>
-                
-                <input type="email" name="entry.1496660127" placeholder="Email Address" required>
-                
-                <input type="tel" name="entry.1357905139" placeholder="Phone Number" required>
-                
+            <form id="registrationForm">
+                <input type="text" id="name" placeholder="Full Name" required>
+                <input type="email" id="email" placeholder="Email Address" required>
+                <input type="tel" id="phone" placeholder="Phone Number" required>
                 <button type="submit" class="btn-submit">Confirm Attendance</button>
             </form>
         </section>
 
+        <section class="calendar-section">
+            <a href="event.ics" download="event.ics" class="btn-calendar">
+                📅 Add to Calendar
+            </a>
+        </section>
+
         <footer>
-            <p>UCKG HelpCentre Newcastle Upon Tyne • Located below Premier Apartments</p>
+            <p>UCKG HelpCentre, Newcastle Upon Tyne, United Kingdom • Located below Premier Apartments</p>
         </footer>
     </div>
 
-    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {alert('Thank you! Your presence has been confirmed.'); window.location.reload();}"></iframe>
-
-    <script>var submitted = false;</script>
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            alert('Thank you, ' + name + '! Your presence has been confirmed.');
+            this.reset();
+        });
+    </script>
 </body>
 </html>

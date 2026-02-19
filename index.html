@@ -78,9 +78,20 @@
             display: flex;
             align-items: center;
             margin-bottom: 20px;
+            text-decoration: none; /* Remove underline dos links */
+            color: inherit;
         }
 
         .info-item:last-child { margin-bottom: 0; }
+
+        /* Estilo específico para o item clicável de endereço */
+        .address-link:hover .icon {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.1);
+        }
+        .address-link:hover .info-text p {
+            text-decoration: underline;
+        }
 
         .icon {
             width: 40px;
@@ -92,6 +103,7 @@
             justify-content: center;
             margin-right: 15px;
             flex-shrink: 0;
+            transition: 0.3s;
         }
 
         .icon svg {
@@ -159,10 +171,6 @@
             margin-top: 10px;
         }
 
-        .btn-submit:active {
-            transform: scale(0.98);
-        }
-
         /* CALENDAR BUTTON */
         .calendar-section {
             text-align: center;
@@ -200,7 +208,6 @@
             text-transform: uppercase;
         }
 
-        /* RESPONSIVIDADE */
         @media (max-width: 480px) {
             .hero h1 { font-size: 1.8rem; }
             .container { padding: 15px; }
@@ -235,20 +242,20 @@
                     <svg viewBox="0 0 24 24"><path d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.53 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z"/></svg>
                 </div>
                 <div class="info-text">
-                    <h3>Horário</h3>
-                    <p>15:00 - 17:00</p>
+                    <h3>Time</h3>
+                    <p>15:00</p>
                 </div>
             </div>
 
-            <div class="info-item">
+            <a href="https://www.google.com/maps/search/?api=1&query=UCKG+Help+Centre+1+Thornton+Street+Newcastle+NE1+4AT" target="_blank" class="info-item address-link">
                 <div class="icon">
                     <svg viewBox="0 0 24 24"><path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2C8.13,2 5,5.13 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9C19,5.13 15.87,2 12,2Z"/></svg>
                 </div>
                 <div class="info-text">
-                    <h3>Local</h3>
-                    <p>1 Thornton Street, NE1<br>UCKG Holy Centre Newcastle</p>
+                    <h3>Address (Click to open Map)</h3>
+                    <p>1 Thornton Street, NE1 4AT<br>UCKG Help Centre Newcastle</p>
                 </div>
-            </div>
+            </a>
         </section>
 
         <section class="form-section">
@@ -263,7 +270,7 @@
                 <div class="form-group">
                     <input type="tel" id="phone" placeholder="Phone Number" required>
                 </div>
-                <button type="submit" class="btn-submit">Confirmar Presença</button>
+                <button type="submit" class="btn-submit">Confirm Presence</button>
             </form>
         </section>
 
@@ -279,11 +286,10 @@
     </div>
 
     <script>
-        // Lógica simples do Formulário
         document.getElementById('registrationForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const name = document.getElementById('name').value;
-            alert('Thank you, ' + name + '! Your presence has been confirmed. See you at the Foot of the Cross.');
+            alert('Thank you, ' + name + '! Your presence has been confirmed.');
             this.reset();
         });
     </script>

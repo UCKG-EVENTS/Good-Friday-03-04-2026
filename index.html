@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Family at the Foot of the Cross - UCKG Newcastle</title>
     <style>
-        /* PALETA DE CORES */
+        /* PALETA DE CORES & GRADIENTE */
         :root {
-            --bg-black: #000000;
             --uckg-blue: #003087;
             --uckg-red: #D32F2F;
             --uckg-gold: #FDD835;
             --text-white: #FFFFFF;
+            /* Gradiente inspirado no pôr do sol do flyer */
+            --bg-gradient: linear-gradient(180deg, #001A41 0%, #003087 40%, #5E0B15 100%);
         }
 
         /* RESET & BASE */
@@ -23,10 +24,11 @@
         }
 
         body {
-            background-color: var(--bg-black);
+            background: var(--bg-gradient);
+            background-attachment: fixed; /* Mantém o fundo fixo ao rolar */
             color: var(--text-white);
             line-height: 1.6;
-            overflow-x: hidden;
+            min-height: 100vh;
         }
 
         /* CONTAINER */
@@ -40,64 +42,60 @@
         /* HEADER / FLYER */
         header {
             text-align: center;
-            padding-top: 20px;
+            padding-top: 10px;
         }
 
         .flyer-img {
             width: 100%;
-            max-width: 520px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            border: 2px solid var(--uckg-blue);
+            max-width: 480px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
         /* HERO SECTION */
         .hero {
             text-align: center;
-            padding: 30px 10px;
+            padding: 25px 10px;
         }
 
         .hero h1 {
             color: var(--uckg-gold);
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             text-transform: uppercase;
             line-height: 1.1;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             font-weight: 900;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
-        /* INFO SECTION */
-        .info-card {
-            background-color: var(--uckg-blue);
-            border-radius: 15px;
+        /* CARDS COM EFEITO GLASS */
+        .info-card, .form-section {
+            background: rgba(255, 255, 255, 0.1); /* Fundo semi-transparente */
+            backdrop-filter: blur(10px); /* Efeito de desfoque */
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
             padding: 25px;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
         .info-item {
             display: flex;
             align-items: center;
             margin-bottom: 20px;
-            text-decoration: none; /* Remove underline dos links */
+            text-decoration: none;
             color: inherit;
         }
 
         .info-item:last-child { margin-bottom: 0; }
 
-        /* Estilo específico para o item clicável de endereço */
-        .address-link:hover .icon {
-            background: rgba(255,255,255,0.3);
-            transform: scale(1.1);
-        }
-        .address-link:hover .info-text p {
-            text-decoration: underline;
-        }
-
         .icon {
-            width: 40px;
-            height: 40px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -108,12 +106,12 @@
 
         .icon svg {
             fill: var(--uckg-gold);
-            width: 20px;
-            height: 20px;
+            width: 24px;
+            height: 24px;
         }
 
         .info-text h3 {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
             color: var(--uckg-gold);
             letter-spacing: 1px;
@@ -125,89 +123,81 @@
         }
 
         /* FORMULÁRIO */
-        .form-section {
-            background-color: var(--uckg-blue);
-            padding: 30px 25px;
-            border-radius: 15px;
-            margin-bottom: 20px;
-        }
-
         .form-section h2 {
             text-align: center;
             margin-bottom: 20px;
-            color: var(--text-white);
+            font-size: 1.5rem;
         }
 
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         input {
             width: 100%;
-            padding: 15px;
-            border-radius: 8px;
-            border: none;
-            background-color: #FFFFFF;
+            padding: 14px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background-color: rgba(255,255,255,0.9);
             font-size: 1rem;
-            color: #333;
-        }
-
-        input:focus {
-            outline: 3px solid var(--uckg-gold);
+            color: #222;
         }
 
         .btn-submit {
             width: 100%;
-            background-color: var(--uckg-red);
+            background: var(--uckg-red);
             color: white;
-            padding: 18px;
+            padding: 16px;
             border: none;
-            border-radius: 8px;
-            font-size: 1.2rem;
+            border-radius: 10px;
+            font-size: 1.1rem;
             font-weight: bold;
             text-transform: uppercase;
             cursor: pointer;
-            transition: transform 0.2s, background 0.3s;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(211, 47, 47, 0.3);
             margin-top: 10px;
+        }
+
+        .btn-submit:hover {
+            filter: brightness(1.2);
+            transform: translateY(-2px);
         }
 
         /* CALENDAR BUTTON */
         .calendar-section {
             text-align: center;
-            padding: 10px 0 40px 0;
+            padding: 0 0 40px 0;
         }
 
         .btn-calendar {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            background-color: var(--uckg-red);
-            color: white;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid var(--uckg-gold);
+            color: var(--uckg-gold);
             text-decoration: none;
-            padding: 15px 30px;
+            padding: 12px 25px;
             border-radius: 50px;
             font-weight: bold;
-            font-size: 1.1rem;
-            width: 100%;
-            max-width: 300px;
             transition: 0.3s;
-            box-shadow: 0 4px 15px rgba(211, 47, 47, 0.4);
+        }
+
+        .btn-calendar:hover {
+            background: var(--uckg-gold);
+            color: #000;
         }
 
         /* FOOTER */
         footer {
             text-align: center;
-            padding: 40px 20px;
-            border-top: 1px solid #333;
+            padding: 30px;
+            opacity: 0.7;
+            font-size: 0.9rem;
         }
 
-        footer p {
-            color: var(--uckg-gold);
-            font-weight: bold;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
+        /* RESPONSIVIDADE */
         @media (max-width: 480px) {
             .hero h1 { font-size: 1.8rem; }
             .container { padding: 15px; }
@@ -218,12 +208,12 @@
 
     <div class="container">
         <header>
-            <img src="goodfridayflyer.jpg" alt="Family at the Foot of the Cross" class="flyer-img" onerror="this.src='https://via.placeholder.com/520x600/003087/FFFFFF?text=Family+at+the+Foot+of+the+Cross'">
+            <img src="goodfridayflyer.jpg" alt="Family at the Foot of the Cross" class="flyer-img" onerror="this.src='https://via.placeholder.com/520x600/003087/FFFFFF?text=Good+Friday+UCKG'">
         </header>
 
         <section class="hero">
             <h1>Family at the Foot of the Cross</h1>
-            <p>A special meeting for your family's transformation.</p>
+            <p>A life-changing meeting for you and your home.</p>
         </section>
 
         <section class="info-card">
@@ -232,7 +222,7 @@
                     <svg viewBox="0 0 24 24"><path d="M19,4H18V2H16V4H8V2H6V4H5C3.89,4 3.01,4.9 3.01,6L3,20C3,21.1 3.89,22 5,22H19C20.1,22 21,21.1 21,20V6C21,4.9 20.1,4 19,4M19,20H5V10H19V20M19,8H5V6H19V8Z"/></svg>
                 </div>
                 <div class="info-text">
-                    <h3>Data</h3>
+                    <h3>Date</h3>
                     <p>Friday, 3 April 2026</p>
                 </div>
             </div>
@@ -247,12 +237,12 @@
                 </div>
             </div>
 
-            <a href="https://www.google.com/maps/search/?api=1&query=UCKG+Help+Centre+1+Thornton+Street+Newcastle+NE1+4AT" target="_blank" class="info-item address-link">
+            <a href="https://www.google.com/maps/search/?api=1&query=1+Thornton+Street,+NE1+4AT+Newcastle" target="_blank" class="info-item">
                 <div class="icon">
                     <svg viewBox="0 0 24 24"><path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2C8.13,2 5,5.13 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9C19,5.13 15.87,2 12,2Z"/></svg>
                 </div>
                 <div class="info-text">
-                    <h3>Address (Click to open Map)</h3>
+                    <h3>Address (Open Maps)</h3>
                     <p>1 Thornton Street, NE1 4AT<br>UCKG Help Centre Newcastle</p>
                 </div>
             </a>
@@ -270,18 +260,18 @@
                 <div class="form-group">
                     <input type="tel" id="phone" placeholder="Phone Number" required>
                 </div>
-                <button type="submit" class="btn-submit">Confirm Presence</button>
+                <button type="submit" class="btn-submit">Confirm Attendance</button>
             </form>
         </section>
 
         <section class="calendar-section">
             <a href="event.ics" download="event.ics" class="btn-calendar">
-                📅 + Add to Calendar
+                📅 Add to Calendar
             </a>
         </section>
 
         <footer>
-            <p>UCKG Newcastle</p>
+            <p>UCKG Newcastle © 2026</p>
         </footer>
     </div>
 
